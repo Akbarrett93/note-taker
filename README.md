@@ -25,7 +25,7 @@
   ## Usage
   Run the server.js to get everything started.
   
-  https://calm-bastion-94856.herokuapp.com/
+  https://notetaker-akb.herokuapp.com/
   
   ![notetaker](https://user-images.githubusercontent.com/118003612/233748057-179284e1-763c-4edd-a256-9f5acc054b05.png)
 
