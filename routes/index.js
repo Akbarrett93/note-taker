@@ -7,7 +7,10 @@ const app = express();
 
 // Get route for all notes
 app.get("/notes", (req, res) => {
-  readFromFile(db).then((data) => res.json(json.parse(data)));
+  readFromFile(db).then((data) => {
+    res.json(json.parse(data));
+    console.log("Here is the request", JSON.parse(data));
+  });
 });
 
 // Post route for submitting a note
@@ -17,7 +20,7 @@ app.post("/notes", (req, res) => {
     const newNote = {
       title,
       text,
-      id: uuid(),
+      id: uuid,
     };
     readAndAppend(newNote, "./db/db.json");
     res.json("Note added.");
