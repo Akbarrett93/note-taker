@@ -1,14 +1,13 @@
 const express = require("express");
 const { readFromFile, readAndAppend } = require("../helpers/fsUtils");
 const uuid = require("../helpers/uuid");
-const db = require("../db/db.json");
 
 const app = express();
 
 // Get route for all notes
 app.get("/notes", (req, res) => {
-  readFromFile(db).then((data) => {
-    res.json(json.parse(data));
+  readFromFile("./db/db.json").then((data) => {
+    res.json(JSON.parse(data));
     console.log("Here is the request", JSON.parse(data));
   });
 });
